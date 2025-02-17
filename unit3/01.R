@@ -9,7 +9,8 @@ sdd <- 3.5
 # set up graphic display for 3 plots in a row
 par(mfrow = c(1, length(samples)))
 
-for (n in samples) {
+for (i in 1:length(samples)) {
+    n <- samples[i]  # Use sample size based on index
     # compute bin width from sd and the number of bars
     bin.width <- sd / 3
 
@@ -26,7 +27,7 @@ for (n in samples) {
     hist(v,
         xlim = c(x.min, x.max), ylim = c(0, y.max),
         breaks = seq(mu - 5 * sd, mu + 5 * sd, by = bin.width),
-        main = paste("mu = ", mu, ", sigma = ", sd), xlab = paste("Sample ", n)
+        main = paste("mu = ", mu, ", sigma = ", sd), xlab = paste("Sample ", i)
     )
 
     # generate x values for curves
