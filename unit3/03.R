@@ -27,7 +27,7 @@ for (i in 1:(num_rows * num_cols)) {
     hist(v,
         xlim = c(x.min, x.max), ylim = c(0, y.max),
         breaks = seq(mu - 5 * sd, mu + 5 * sd, by = bin.width),
-        main = paste("Sample", i), xlab = "Values"
+        main = "" , xlab = paste("Sample", i)
     )
 
     x <- seq(x.min, x.max, length = 120)
